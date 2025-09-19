@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>About - Baimakhanbetov Alrami</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script>
+      document.documentElement.className =
+        localStorage.getItem("theme") || "light-theme";
+    </script>
+  </head>
+  <body>
+    <button id="theme-toggle" aria-label="Toggle theme">
+      <span class="theme-toggle-text">🌙</span>
+    </button>
+
+    <nav id="navbar">
+      <ul class="nav-list">
+        <li class="nav-item"><a class="nav-link" href="index.html">home</a></li>
+        <li class="nav-item"><span class="nav-current">about</span></li>
+        <li class="nav-item"><a class="nav-link" href="faq.html">faq</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">blog</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="main-content">
+      <section id="about" class="content-section">
+        <h2 class="section-heading">about me</h2>
+        <div class="text-content">
+          <p class="paragraph-text">
+            im a 2nd year student at AITU majoring in swe. im passionate about
+            backend development, DevOps, and building efficient systems.
+          </p>
+        </div>
+
+        <div class="skills-container">
+          <h3 class="skills-heading">technical skills</h3>
+          <div class="skills-grid">
+            <div class="skill-category">
+              <h4 class="skill-category-title">backend</h4>
+              <ul class="skills-list">
+                <li class="skill-item">golang (gin)</li>
+                <li class="skill-item">python (fastapi)</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h4 class="skill-category-title">frontend</h4>
+              <ul class="skills-list">
+                <li class="skill-item">html + css</li>
+                <li class="skill-item">javascript (react)</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h4 class="skill-category-title">devops</h4>
+              <ul class="skills-list">
+                <li class="skill-item">ci/cd</li>
+                <li class="skill-item">docker</li>
+                <li class="skill-item">k8s + helm</li>
+                <li class="skill-item">ansible + terraform</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h4 class="skill-category-title">systems</h4>
+              <ul class="skills-list">
+                <li class="skill-item">ubuntu</li>
+                <li class="skill-item">arch</li>
+                <li class="skill-item">nixos</li>
+                <li class="skill-item">windows</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const themeToggle = document.getElementById("theme-toggle");
+      const themeText = themeToggle.querySelector(".theme-toggle-text");
+
+      function toggleTheme() {
+        const root = document.documentElement;
+        const isDark = root.className === "dark-theme";
+        root.className = isDark ? "light-theme" : "dark-theme";
+        themeText.textContent = isDark ? "🌙" : "☀️";
+        localStorage.setItem("theme", root.className);
+      }
+
+      themeText.textContent =
+        document.documentElement.className === "dark-theme" ? "☀️" : "🌙";
+      themeToggle.addEventListener("click", toggleTheme);
+    </script>
+  </body>
+</html>

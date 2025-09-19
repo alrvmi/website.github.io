@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>FAQ - Baimakhanbetov Alrami</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script>
+      document.documentElement.className =
+        localStorage.getItem("theme") || "light-theme";
+    </script>
+  </head>
+  <body>
+    <button id="theme-toggle" aria-label="Toggle theme">
+      <span class="theme-toggle-text">🌙</span>
+    </button>
+
+    <nav id="navbar">
+      <ul class="nav-list">
+        <li class="nav-item"><a class="nav-link" href="index.html">home</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">about</a>
+        </li>
+        <li class="nav-item"><span class="nav-current">faq</span></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">blog</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="main-content">
+      <section class="content-section">
+        <h2 class="section-heading">faq</h2>
+        <div class="faq-container">
+          <div class="faq-section">
+            <h3 class="faq-category">personal details</h3>
+            <div class="faq-grid">
+              <div class="faq-item">
+                <h4 class="faq-label">age</h4>
+                <p class="faq-text">18</p>
+              </div>
+              <div class="faq-item">
+                <h4 class="faq-label">birthday</h4>
+                <p class="faq-text">05/10/2006</p>
+              </div>
+              <div class="faq-item">
+                <h4 class="faq-label">where are you from?</h4>
+                <p class="faq-text">Kazakhstan, Astana</p>
+              </div>
+              <div class="faq-item">
+                <h4 class="faq-label">what's your height?</h4>
+                <p class="faq-text">177 cm</p>
+              </div>
+              <div class="faq-item">
+                <h4 class="faq-label">major</h4>
+                <p class="faq-text">swe</p>
+              </div>
+              <div class="faq-item">
+                <h4 class="faq-label">whats your mbti</h4>
+                <p class="faq-text">intj</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const themeToggle = document.getElementById("theme-toggle");
+      const themeText = themeToggle.querySelector(".theme-toggle-text");
+
+      function toggleTheme() {
+        const root = document.documentElement;
+        const isDark = root.className === "dark-theme";
+        root.className = isDark ? "light-theme" : "dark-theme";
+        themeText.textContent = isDark ? "🌙" : "☀️";
+        localStorage.setItem("theme", root.className);
+      }
+
+      themeText.textContent =
+        document.documentElement.className === "dark-theme" ? "☀️" : "🌙";
+      themeToggle.addEventListener("click", toggleTheme);
+    </script>
+  </body>
+</html>

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Your Name</title>
+    <title>Contact - Baimakhanbetov Alrami</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css" />
     <script>
@@ -14,44 +14,34 @@
     <button id="theme-toggle" aria-label="Toggle theme">
       <span class="theme-toggle-text">🌙</span>
     </button>
-    <header id="top-header">
-      <div class="header-content">
-        <h1 class="site-title">Baimakhanbetov Alrami</h1>
-        <img src="my_image.jpg" alt="picture" class="profile-image" />
-        <div class="tagline">cyberpunk enthusiast in this corpo world</div>
-      </div>
-      <div id="time-location">time in Astana: <span id="city-time"></span></div>
-    </header>
 
     <nav id="navbar">
       <ul class="nav-list">
-        <li class="nav-item"><span class="nav-current">home</span></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">home</a></li>
         <li class="nav-item">
           <a class="nav-link" href="about.html">about</a>
         </li>
         <li class="nav-item"><a class="nav-link" href="faq.html">faq</a></li>
         <li class="nav-item"><a class="nav-link" href="blog.html">blog</a></li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact.html">contact</a>
-        </li>
+        <li class="nav-item"><span class="nav-current">contact</span></li>
       </ul>
     </nav>
 
-    <script>
-      function updateTime() {
-        const now = new Date();
-        const timeString = now.toLocaleTimeString([], {
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-          hour12: false,
-          timeZone: "Asia/Almaty",
-        });
-        document.getElementById("city-time").textContent = timeString;
-      }
-      setInterval(updateTime, 1000);
-      updateTime();
-    </script>
+    <main class="main-content">
+      <section id="contact" class="content-section">
+        <h2 class="section-heading">contacts</h2>
+        <div class="contact-container">
+          <a href="mailto:b.alrami@icloud.com" class="contact-link">
+            <span class="contact-icon">📧</span>
+            email
+          </a>
+          <a href="https://github.com/alrvmi" class="contact-link">
+            <span class="contact-icon">👨‍💻</span>
+            github
+          </a>
+        </div>
+      </section>
+    </main>
 
     <script>
       const themeToggle = document.getElementById("theme-toggle");
